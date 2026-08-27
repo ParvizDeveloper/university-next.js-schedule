@@ -30,7 +30,7 @@ export default async function SchedulePage() {
                 <h3 className="day-title">{dayTitle}</h3>
                 
                 {groupedSchedule[dayTitle].map((item) => (
-                  <div key={item.id} className="lesson" style={{ marginBottom: '15px' }}>
+                  <div key={item.id} className="lesson">
                     <span className="time">{item.time}</span>
                     <div className="info">
                       <div className="subject">{item.subject}</div>

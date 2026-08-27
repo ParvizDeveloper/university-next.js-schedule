@@ -151,7 +151,7 @@ export default function AdminPage() {
         )}
 
         {/* ФОРМА СОЗДАНИЯ / РЕДАКТИРОВАНИЯ */}
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '50px' }}>
+        <form className="admin-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '50px' }}>
           <label>
             День недели / Заголовок:
             <input type="text" name="day_title" placeholder="MONDAY" value={formData.day_title} onChange={handleChange} required style={inputStyle} />
@@ -182,7 +182,7 @@ export default function AdminPage() {
             <input type="text" name="room" placeholder="Room 304" value={formData.room} onChange={handleChange} style={inputStyle} />
           </label>
 
-          <div style={{ display: 'flex', gap: '10px' }}>
+          <div className="admin-form-actions" style={{ display: 'flex', gap: '10px' }}>
             <button type="submit" style={btnPrimaryStyle}>
               {editingId ? 'Сохранить изменения' : 'Добавить в расписание'}
             </button>
@@ -199,7 +199,7 @@ export default function AdminPage() {
           ТЕКУЩЕЕ РАСПИСАНИЕ
         </h3>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div className="admin-list" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {scheduleList.length > 0 ? (
             scheduleList.map((item) => (
               <div

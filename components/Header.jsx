@@ -8,14 +8,12 @@ export default function Header() {
   const pathname = usePathname()
   const [theme, setTheme] = useState('dark')
 
-  // При загрузке восстанавливаем тему из localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark'
     setTheme(savedTheme)
     document.documentElement.setAttribute('data-theme', savedTheme)
   }, [])
 
-  // Переключение темы
   const toggleTheme = () => {
     const nextTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(nextTheme)
@@ -31,29 +29,33 @@ export default function Header() {
   ]
 
   return (
-    <>
-      <header>
-        <div className="nav-container">
-          <nav>
-            <ul>
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={pathname === item.href ? 'active' : ''}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </header>
+    <header>
+      <div className="nav-container">
+        <nav aria-label="Main navigation">
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={pathname === item.href ? 'active' : ''}
+                  aria-current={pathname === item.href ? 'page' : undefined}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-        <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
-      </button>
-    </>
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+        >
+          <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
+        </button>
+      </div>
+    </header>
   )
 }
