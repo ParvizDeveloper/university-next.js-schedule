@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase'
 
-export const revalidate = 0; // Свежие данные при каждом запросе
+export const revalidate = 0; 
 
 export default async function SchedulePage() {
   const { data: schedule } = await supabase
@@ -8,7 +8,6 @@ export default async function SchedulePage() {
     .select('*')
     .order('created_at', { ascending: true })
 
-  // Группируем пары по дням недели (например, "MONDAY")
   const groupedSchedule = schedule?.reduce((acc, item) => {
     const day = item.day_title;
     if (!acc[day]) {
@@ -46,7 +45,7 @@ export default async function SchedulePage() {
             ))
           ) : (
             <p style={{ textAlign: 'center', opacity: 0.7, width: '100%' }}>
-              Расписание пока не добавлено
+              The schedule has not been added yet
             </p>
           )}
         </div>
