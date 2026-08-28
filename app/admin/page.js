@@ -34,9 +34,35 @@ export default function AdminPage() {
     }
   }, [isAuthenticated])
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
-    if (password) setIsAuthenticated(true)
+
+    setStatus({ type: 'info', msg: 'Проверка пароля...' })
+
+    try {
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password }),
+      })
+
+      const result = await res.json()
+
+      if (!res.ok) {
+        throw new Error(result.error || 'Неверный пароль')
+      }
+
+      setIsAuthenticated(true)
+      setStatus({ type: '', msg: '' })
+    } catch (err) {
+      setIsAuthenticated(false)
+      setStatus({
+        type: 'error',
+        msg: err.message,
+      })
+    }
   }
 
   const handleChange = (e) => {
@@ -121,6 +147,17 @@ export default function AdminPage() {
       <div className="page active" style={{ padding: '40px 20px' }}>
         <div className="container" style={{ maxWidth: '400px', margin: '0 auto' }}>
           <h2 className="title">ADMIN LOGIN</h2>
+          {status.msg && (
+            <p
+              style={{
+                color: status.type === 'error' ? '#ff4d4d' : '#00ff88',
+                marginBottom: '15px',
+                textAlign: 'center',
+              }}
+            >
+              {status.msg}
+            </p>
+          )}
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <input
               type="password"
