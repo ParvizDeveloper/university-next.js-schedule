@@ -2,7 +2,7 @@ export default function HomePage() {
   return (
     <div className="page active">
       <div className="hero">
-        <h1>IT104</h1>
+        <h1>IT204</h1>
         <h2>MILLAT UMIDI</h2>
         <p>WE're NOT JUST "GROUP"</p>
       </div>
