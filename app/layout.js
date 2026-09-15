@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <footer>
           <p style={{ fontSize: '2rem' }}>
-            <strong>IT 104 - A GROUP WHERE LEGENDS GATHERED</strong>
+            <strong>IT 204 - A GROUP WHERE LEGENDS GATHERED</strong>
           </p>
           <p style={{ marginTop: '20px', fontSize: '1.6rem' }}>
             Website made by -{' '}
