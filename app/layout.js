@@ -15,7 +15,7 @@ const exo2 = Exo_2({
 });
 
 export const metadata = {
-  title: "IT104 - LEGENDS OF M.U.",
+  title: "IT204 - LEGENDS OF M.U.",
   description: "IT 104 - A group where legends gathered",
 };
 
