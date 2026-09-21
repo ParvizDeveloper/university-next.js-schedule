@@ -24,7 +24,7 @@ export default function LegendsPage() {
   return (
     <div className="page active">
       <div className="container">
-        <h2 className="title">LEGENDS OF IT104</h2>
+        <h2 className="title">LEGENDS OF IT203</h2>
         <div className="legends-grid">
           {legends.map((item, index) => (
             <div key={index} className="legend-card">

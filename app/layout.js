@@ -15,8 +15,8 @@ const exo2 = Exo_2({
 });
 
 export const metadata = {
-  title: "IT104 - LEGENDS OF M.U.",
-  description: "IT 104 - A group where legends gathered",
+  title: "IT203 - LEGENDS OF M.U.",
+  description: "IT 203 - A group where legends gathered",
 };
 
 export default function RootLayout({ children }) {
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <footer>
           <p style={{ fontSize: '2rem' }}>
-            <strong>IT 104 - A GROUP WHERE LEGENDS GATHERED</strong>
+            <strong>IT 203 - A GROUP WHERE LEGENDS GATHERED</strong>
           </p>
           <p style={{ marginTop: '20px', fontSize: '1.6rem' }}>
             Website made by -{' '}
