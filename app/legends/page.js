@@ -1,7 +1,6 @@
 export default function LegendsPage() {
   const legends = [
     { name: 'Aziz Turgunov (LEGEND)', link: 'https://t.me/Aziz_Turgunow', tag: '@Aziz_Turgunow' },
-    { name: 'Shakhina Ambassador', link: 'https://t.me/shaxinashokirova', tag: '@shaxinashokirova' },
     { name: 'Paranoia', link: 'https://t.me/prnoia_0', tag: '@prnoia_0' },
     { name: 'Tigran', link: 'https://t.me/Tgrn1337', tag: '@Tgrn1337' },
     { name: 'Dilnura', link: 'https://t.me/dilunara8', tag: '@dilunara8' },
