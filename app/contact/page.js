@@ -20,15 +20,6 @@ export default function ContactPage() {
             >
               Parviz
             </a>
-            <p style={{ marginTop: '20px', fontSize: '2rem' }}>Ambassador </p>
-            <a
-              href="https://t.me/shaxinashokirova"
-              target="_blank"
-              rel="noreferrer"
-              style={{ color: 'var(--secondary)', fontSize: '4rem', fontWeight: 900 }}
-            >
-              Shakhina
-            </a>
           </div>
         </div>
       </div>
